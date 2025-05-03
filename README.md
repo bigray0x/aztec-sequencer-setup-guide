@@ -69,9 +69,6 @@ sudo systemctl enable --now docker
 ```bash
 bash -i <(curl -s https://install.aztec.network)
 ```
-```bash
-aztec-up alpha-testnet
-```
 
 MacOS
 
@@ -93,6 +90,9 @@ Test the cli functionality
 
 ```bash
 aztec --version
+```
+```bash
+aztec-up alpha-testnet
 ```
 
 Output should be in this format 0.8.5 or so.
