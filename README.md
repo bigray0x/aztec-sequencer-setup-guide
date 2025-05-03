@@ -66,6 +66,9 @@ sudo systemctl enable --now docker
 
 ### Step 2 : Install Aztec Cli
 
+```bash -i <(curl -s https://install.aztec.network)
+aztec-up alpha-testnet```
+
 MacOS
 
 ```bash
