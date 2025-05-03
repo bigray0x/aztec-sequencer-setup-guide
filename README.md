@@ -66,7 +66,10 @@ sudo systemctl enable --now docker
 
 ### Step 2 : Install Aztec Cli
 
-```bash -i <(curl -s https://install.aztec.network)
+```bash
+bash -i <(curl -s https://install.aztec.network)
+```
+```bash
 aztec-up alpha-testnet
 ```
 
