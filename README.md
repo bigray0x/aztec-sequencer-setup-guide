@@ -146,18 +146,17 @@ SEQUENCER_COINBASE=0xYourPublicWalletAddress
 ```
 Save the file with control x + y + enter.
 
-Load the .env file 
-
-```bash
-source ~/.aztec-sequencer.env
-```
 
 ### Step 5 : Start The Sequencer Node
 
 ```bash
 screen -S Aztec
 ```
+Load the .env file 
 
+```bash
+source ~/.aztec-sequencer.env
+```
 ```bash
 aztec start --node --archiver --sequencer \
   --network alpha-testnet \
