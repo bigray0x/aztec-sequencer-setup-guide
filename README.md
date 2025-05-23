@@ -165,7 +165,8 @@ aztec start --node --archiver --sequencer \
   --sequencer.validatorPrivateKey "$SEQUENCER_VALIDATOR_PRIVATE_KEY" \
   --sequencer.coinbase "$SEQUENCER_COINBASE" \
   --p2p.p2pIp "$P2P_IP" \
-  --p2p.maxTxPoolSize 1000000000
+  --p2p.maxTxPoolSize 1000000000 \
+  --sequencer.governanceProposerPayload 0x54F7fe24E349993b363A5Fa1bccdAe2589D5E5Ef
 ```
 ![Image 5-1-25 at 8 56 PM](https://github.com/user-attachments/assets/fb9372d1-4446-4c04-b2f8-5406a0ac0c09)
 
