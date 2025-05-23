@@ -224,8 +224,25 @@ aztec add-l1-validator \
 ```
 ![Image 5-1-25 at 9 04 PM (1)](https://github.com/user-attachments/assets/ed683c0c-251e-4049-9479-fd4ec86ee640)
 
-That’s all for now to get it up and running,
+### Facing Known Errors like
 
-If you want a more simpler guide check my GitHub.
+-> ```The computed genesis archive tree root 0x1f9a1f495b0a8f12ebc07e1bea931ea1e2b6f862b6da9d5395ab11c5374ccabb does not match the expected genesis archive tree root 0x0e95630d12892327952c4a86062c78fa1efb960050efe6b75eff48342d581d96 for the rollup deployed at 0x8d1cc702453fa889f137dbd5734cdb7ee96b6ba0```
 
-Done Lfg ✅
+you need to remove the aztec cli and reinstall and restart the node using step 2.
+
+or
+
+-> ```"unable to get blob sidecar block" or "archiver Error syncing archiver: No blob bodies found for block" or "blob-sink-client Unexpected end of JSON input"```
+
+you need to change your beacon rpc to a valid one or check if it's maxxed out.
+
+or
+
+--> ```no URL was provided to transport```
+
+you need to source your .env file again inside the screen and restart the node or check if the .env file is in same path.
+
+That’s all for now to get it up and running.
+
+If you want more simpler guides check my GitHub.
+
