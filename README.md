@@ -240,7 +240,7 @@ or
 
 --> ```no URL was provided to transport```
 
-you need to source your .env file again inside the screen and restart the node or check if the .env file is in same path.
+you need to source your .env file again inside the screen and restart the node or check if the .env file is in same path because it contains both beacon and rpc URLs needed to run the node.
 
 That’s all for now to get it up and running.
 
