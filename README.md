@@ -260,6 +260,23 @@ export ETHEREUM_HOSTS=rpc_1,rpc_2,rpc_3,rpc_4,rpc_5
 
 ```
 
+then restart the node
+
+ ```bash
+source ~/.aztec-sequencer.env
+```
+```bash
+aztec start --node --archiver --sequencer \
+  --network alpha-testnet \
+  --l1-rpc-urls "$ETHEREUM_HOSTS" \
+  --l1-consensus-host-urls "$L1_CONSENSUS_HOST_URLS" \
+  --sequencer.validatorPrivateKey "$SEQUENCER_VALIDATOR_PRIVATE_KEY" \
+  --sequencer.coinbase "$SEQUENCER_COINBASE" \
+  --p2p.p2pIp "$P2P_IP" \
+  --p2p.maxTxPoolSize 1000000000 \
+  --sequencer.governanceProposerPayload 0x54F7fe24E349993b363A5Fa1bccdAe2589D5E5Ef
+```
+
 you can use free rpcs from different platforms to prevent ip address restrictions
 
 examples:
