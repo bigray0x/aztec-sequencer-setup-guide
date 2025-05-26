@@ -242,6 +242,32 @@ or
 
 you need to source your .env file again inside the screen and restart the node or check if the .env file is in same path because it contains both beacon and rpc URLs needed to run the node.
 
+### possible rpc solutions
+
+this solution helps you add up to 5 RPCs so your node can always fall back on others and stay reliable even if it's free.
+
+- open the .env file and replace the variables with this new line
+
+  ```
+  screen -D -r Aztec && nano ~/.aztec-sequencer.env
+  ```
+  
+replace the first two lines with up to 5 RPCs and Beacons.
+
+```
+export L1_CONSENSUS_HOST_URLS=rpc_1,rpc_2,rpc_3,rpc_4,rpc_5
+export ETHEREUM_HOSTS=rpc_1,rpc_2,rpc_3,rpc_4,rpc_5
+
+```
+
+you can use free rpcs from different platforms to prevent ip address restrictions
+
+examples:
+
+alchemy.com
+ankr.com
+drpc.org
+
 That’s all for now to get it up and running.
 
 If you want more simpler guides check my GitHub.
