@@ -264,9 +264,9 @@ you can use free rpcs from different platforms to prevent ip address restriction
 
 examples:
 
-alchemy.com
-ankr.com
-drpc.org
+alchemy.com rpc,
+ankr.com rpc,
+drpc.org rpc
 
 That’s all for now to get it up and running.
 
