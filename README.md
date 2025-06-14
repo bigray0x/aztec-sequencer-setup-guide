@@ -120,11 +120,13 @@ ufw allow 8080
 
 ### Step 4 : create and env file to store sensitive details
 
-Get your own Sepolia RPC URL & Sepolia BEACON URL: Register in Ankr, Fund it with any amount of USDT via your wallet, Create a project, get your normal sepolia rpc and beacon sepolia rpc. (Reliable)
+Get your own Sepolia RPC URL & Sepolia BEACON URL: Register in [Mintair](https://mintair.xyz/onboarding?ref=YR4C-3H84), Fund it with $10 via your wallet.
 
-Link - https://www.ankr.com/rpc/?utm_referral=5J4259FS4V
-
-You can create a Sepolia RPC URL in Alchemy and Use this https://rpc.drpc.org/eth/sepolia/beacon as free BEACON RPC. (Limited)
+- go to rpc
+- purchase the rpc using your credits, $1 = 1 credit.
+- so $9.99 monthly.
+- 
+You can also run a Sepolia and Beacon RPC, specs are high though.
 
 ```bash
 nano ~/.aztec-sequencer.env
