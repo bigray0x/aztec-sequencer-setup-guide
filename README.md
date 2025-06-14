@@ -279,15 +279,5 @@ aztec start --node --archiver --sequencer \
   --sequencer.governanceProposerPayload 0x54F7fe24E349993b363A5Fa1bccdAe2589D5E5Ef
 ```
 
-you can use free rpcs from different platforms to prevent ip address restrictions
-
-examples:
-
-alchemy.com rpc,
-ankr.com rpc,
-drpc.org rpc
-
-That’s all for now to get it up and running.
-
-If you want more simpler guides check my GitHub.
+- If you want more simpler guides check my GitHub.
 
