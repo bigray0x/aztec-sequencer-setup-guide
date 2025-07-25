@@ -226,6 +226,73 @@ aztec add-l1-validator \
 ```
 ![Image 5-1-25 at 9 04 PM (1)](https://github.com/user-attachments/assets/ed683c0c-251e-4049-9479-fd4ec86ee640)
 
+# Aztec sequencer docker migration guide
+
+### Step 1: Reattach and kill running nodes
+
+```
+screen -r aztec
+```
+```Control c``` to kill the node.
+
+### Step 2: Create an Aztec file to store docker data:
+
+```
+mkdir Aztec
+```
+- Move the sequencer .env file from old config:
+
+```
+cd $home && sudo mv .aztec-sequencer.env ./Aztec
+```
+- Source the .env file:
+  
+```
+source aztec-sequencer.env
+```
+- create a docker compose file:
+  
+```
+nano docker-compose.yaml 
+```
+- Paste this details in it:
+  
+```
+services:
+  aztec-node:
+    container_name: aztec-sequencer
+    image: aztecprotocol/aztec:0.87.9
+    restart: unless-stopped
+    environment:
+      ETHEREUM_HOSTS: ${ETHEREUM_HOSTS}
+      L1_CONSENSUS_HOST_URLS: ${L1_CONSENSUS_HOST_URLS}
+      DATA_DIRECTORY: /data
+      SEQUENCER_VALIDATOR_PRIVATE_KEY: ${SEQUENCER_VALIDATOR_PRIVATE_KEY}
+      SEQUENCER_COINBASE: ${SEQUENCER_COINBASE}
+      P2P_IP: ${P2P_IP}
+      LOG_LEVEL: info
+    entrypoint: >
+      sh -c 'node --no-warnings --max-old-space-size=8192 /usr/src/yarn-project/aztec/dest/bin/index.js start --network alpha-testnet --node --archiver --sequencer'
+    ports:
+      - 40400:40400/tcp
+      - 40400:40400/udp
+      - 8080:8080
+    volumes:
+      - /root/.aztec/alpha-testnet/data/:/data
+```
+
+- Save using control + X, y & enter.
+
+- Start the node:
+  
+```
+docker-compose up -d 
+```
+- Or use this below if the one above doesn’t work:
+  
+```
+docker compose up -d
+```
 ### Facing Known Errors like
 
 -> ```The computed genesis archive tree root 0x1f9a1f495b0a8f12ebc07e1bea931ea1e2b6f862b6da9d5395ab11c5374ccabb does not match the expected genesis archive tree root 0x0e95630d12892327952c4a86062c78fa1efb960050efe6b75eff48342d581d96 for the rollup deployed at 0x8d1cc702453fa889f137dbd5734cdb7ee96b6ba0```
