@@ -280,6 +280,18 @@ services:
     volumes:
       - /root/.aztec/alpha-testnet/data/:/data
 ```
+- if you want to run v0.1.1 do this
+
+change this line above in the yaml file:
+
+``` 
+image: aztecprotocol/aztec:0.87.9
+``` 
+to
+
+```
+image: aztecprotocol/aztec:0.1.1
+```
 
 - Save using control + X, y & enter.
 
